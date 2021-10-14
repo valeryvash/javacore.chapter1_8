@@ -3,7 +3,7 @@ package main.java.com.valeryvash.module1_2_tasks;
 import java.util.HashSet;
 import java.util.Random;
 
-public class CommonElements {
+public class CommonElementsCollection {
     public static void main(String[] args) {
 
         int numberOfElements = 100;
