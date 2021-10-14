@@ -1,4 +1,4 @@
-package main.java.com.valeryvash.javacore.chapter18;
+package main.java.com.valeryvash.module1_2_tasks;
 
 import java.util.HashSet;
 import java.util.Random;
