@@ -72,6 +72,9 @@ public class CommonElementsAlgorithm {
         boolean check[] = new boolean[Math.max(
                         firstCollection.length, secondCollection.length)];
 
+        //Init counter. It is needed for precise array init
+        int counter = 0;
+
         if (firstCollection.length >= secondCollection.length)
         {
             for (int first_element:
@@ -80,6 +83,7 @@ public class CommonElementsAlgorithm {
                     if (first_element == secondCollection[i] &&
                             !check[i]) {
                         check[i] = true;
+                        counter++;
                     }
                 }
             }
@@ -90,24 +94,38 @@ public class CommonElementsAlgorithm {
                     if (first_element == firstCollection[i] &&
                             !check[i]) {
                         check[i] = true;
+                        counter++;
                     }
                 }
             }
         }
 
-        int counter = 0;
-        for (boolean flag:
-             check) {
-            if (flag) counter++;
-        }
         intersectionCollection = new int[counter];
 
         //TODO: complete bad algorithm version
         if (firstCollection.length >= secondCollection.length){
-            for (int i = 0; i < intersectionCollection.length; i++) {
-
+            for (int i = 0; i < secondCollection.length; i++) {
+                if (check[i])
+                {
+                    intersectionCollection[counter---1]=secondCollection[i];
+                }
+            }
+        } else {
+            for (int i = 0; i < firstCollection.length; i++) {
+                if (check[i])
+                {
+                    intersectionCollection[counter---1]=firstCollection[i];
+                }
             }
         }
+
+        // Print intersection massive in console
+
+        for (int v:
+             intersectionCollection) {
+            System.out.print(v + "  ");
+        }
+        System.out.println();
 
 
 
