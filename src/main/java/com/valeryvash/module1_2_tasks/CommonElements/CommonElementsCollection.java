@@ -16,12 +16,10 @@ public class CommonElementsCollection {
     public static ArrayList<Integer> getCommonElements(ArrayList<Integer> firstCollection,
                                                        ArrayList<Integer> secondCollection)
     {
-        ArrayList<Integer> returnedCollection = new ArrayList<>(firstCollection);
+        firstCollection.retainAll(secondCollection);
 
-        returnedCollection.retainAll(secondCollection);
+        Collections.sort(firstCollection);
 
-        Collections.sort(returnedCollection);
-
-        return returnedCollection;
+        return firstCollection;
     }
 }
