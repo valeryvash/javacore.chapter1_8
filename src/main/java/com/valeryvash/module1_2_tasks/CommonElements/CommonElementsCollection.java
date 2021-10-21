@@ -2,8 +2,6 @@ package main.java.com.valeryvash.module1_2_tasks.CommonElements;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
-import java.util.Random;
 
 public class CommonElementsCollection {
 
@@ -22,4 +20,5 @@ public class CommonElementsCollection {
 
         return firstCollection;
     }
+
 }
