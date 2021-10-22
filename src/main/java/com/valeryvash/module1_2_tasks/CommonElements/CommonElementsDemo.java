@@ -2,7 +2,6 @@ package main.java.com.valeryvash.module1_2_tasks.CommonElements;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import static main.java.com.valeryvash.module1_2_tasks.CommonElements.CommonElementsCollection.getCommonElements;
 
@@ -17,6 +16,5 @@ public class CommonElementsDemo {
                 new ArrayList<>(Arrays.asList(fArray)),
                 new ArrayList<>(Arrays.asList(sArray))
         ));
-
     }
 }

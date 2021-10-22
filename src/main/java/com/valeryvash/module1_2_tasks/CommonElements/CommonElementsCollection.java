@@ -20,5 +20,4 @@ public class CommonElementsCollection {
 
         return firstCollection;
     }
-
 }
