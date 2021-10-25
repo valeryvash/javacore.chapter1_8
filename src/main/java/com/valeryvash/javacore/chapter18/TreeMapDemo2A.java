@@ -62,5 +62,46 @@ public class TreeMapDemo2A {
         System.out.print("New balance of " + user + ": ");
 
         System.out.println(tm.get(user));
+
+        /*
+         Lambda usage
+         */
+
+        System.out.println("Lambda usage");
+
+        Comparator<String> compLastNamesL =
+                (o1,o2) ->
+                        o1.substring(o1.lastIndexOf(' '))
+                                .compareToIgnoreCase(
+                                        o2.substring(o2.lastIndexOf(' ')));
+        Comparator<String> compLastThenFirstL =
+                compLastNamesL.thenComparing(
+                        (o1,o2) -> o1.compareToIgnoreCase(o2)
+                );
+
+        tm = new TreeMap<>(compLastThenFirstL);
+
+        tm.put("John Dow", 3434.12);
+        tm.put("Tom Smith", 123.12);
+        tm.put("Jane Baker", 1378.00);
+        tm.put("Tod Hall", 99.22);
+        tm.put("Ralf Smith", -19.08);
+
+        set = tm.entrySet();
+
+        for (Map.Entry<String, Double> temp : set) {
+            System.out.print(temp.getKey() + " : ");
+            System.out.println(temp.getValue());
+        }
+
+
+        user = "John Dow";
+        balance = tm.get(user);
+        tm.put(user, balance + 1000);
+
+        System.out.print("New balance of " + user + ": ");
+
+        System.out.println(tm.get(user));
+
     }
 }
