@@ -18,10 +18,11 @@ public class CommonElementsDemo {
 //                new ArrayList<>(Arrays.asList(sArray))
 //       ));
 
-        int[] left =  {6, 4, 6,-15,9, -8, 1, 100, -100};
-        int[] right = {9,-15,3,8,76544, -42, 100,1,-100};
+        Integer[] left =  {6, 4, 6,-15,9, -8, 1, 100, -100};
+        Integer[] right = {9,-15,3,8,76544, -42, 100,1,-100};
 
-        int[] array = getMassiveOfCommonsElements(left, right);
+        // without duplicates and "natural order" sort
+        Integer[] array = getCommonsElements(left, right);
 
         System.out.println(Arrays.toString(array));
 

@@ -1,7 +1,7 @@
 package main.java.com.valeryvash.module1_2_tasks.CommonElements;
 
 
-import java.util.Arrays;
+import java.util.*;
 
 public class CommonElementsAlgorithm {
 
@@ -19,7 +19,7 @@ public class CommonElementsAlgorithm {
             massive[j + 1] = temp;
         }
     }
-
+    // method return commons elements with duplicates
     public static int[] getMassiveOfCommonsElements(int[] first, int[] second)
     {
         boolean[] checked = new boolean[second.length];
@@ -50,4 +50,36 @@ public class CommonElementsAlgorithm {
 
         return ret_val;
     }
+
+    // method return commons elements without duplicates
+    public static Integer[] getCommonsElements(Integer[] first, Integer[] second)
+    {
+        // discard all duplicates and make all collections initially sorted
+        TreeSet<Integer> fSet = new TreeSet<Integer>(List.of(first));
+        TreeSet<Integer> sSet = new TreeSet<Integer>(List.of(second));
+        // collection to be returned
+        TreeSet<Integer> ret_val = new TreeSet<Integer>();
+
+        // if sets doesn't intersect we have no need to check it and just return zero massive
+        if (!(fSet.first() > sSet.last() || fSet.last() < sSet.first())) {
+            // check all elements from first set
+            for (int f : fSet) {
+                // check all elements from second set
+                for (int s : sSet) {
+                    if (f < s ) break; // we have no need to check further
+                    if (f == s) {
+                        ret_val.add(f);
+                        sSet.remove(f); // no need to repeat check of this element further
+                        break;
+                    }
+                }
+                if (sSet.isEmpty()) break;
+            }
+        } else {
+            return new Integer[0];}
+
+        return ret_val.toArray(new Integer[0]);
+    }
+
+
 }
